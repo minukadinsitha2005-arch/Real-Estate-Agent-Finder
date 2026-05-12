@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Real Estate Agent Finder</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="navbar">
+
+<div class="logo">
+  <img src="images/logo.png" alt="Real Estate Agent Finder Logo">
+  <span>RealtorSL</span>
+</div>
+
+    <nav class="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="agents.html">Find Agents</a>
+      <a href="properties.html">Properties</a>
+      <a href="appointments.html">Appointments</a>
+      <a href="about.html" class="active">About Us</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <div class="auth">
+      <div class="auth-buttons" id="authButtons">
+        <button class="login-btn" onclick="openModal('login')">Log in</button>
+        <button class="signup-btn" onclick="openModal('signup')">Sign up</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero hero-about">
+    <div class="overlay">
+      <h1>Helping people connect with trusted real estate professionals</h1>
+
+      <div class="tabs">
+        <span class="active">Our Story</span>
+        <span>Mission</span>
+        <span>Vision</span>
+        <span>Team</span>
+        <span>Support</span>
+      </div>
+
+      <div class="search-box">
+        <input type="text" placeholder="Learn more about our platform" />
+        <button>Explore</button>
+      </div>
+    </div>
+
+    <div class="hero-fade"></div>
+  </section>
+
+  <!-- Our Story -->
+  <section class="about-story-section">
+    <div class="about-story-container">
+      <div class="about-story-text reveal">
+        <span class="about-story-tag">Our Story</span>
+        <h2>Why we created this platform</h2>
+        <p>
+          Buying, selling, or renting a property can feel confusing when people
+          do not know which agent to trust. Many users struggle to compare
+          professionals, book meetings, and find useful property support in one place.
+        </p>
+        <p>
+          Real Estate Agent Finder was created to make that process easier.
+          Our platform helps users discover trusted agents, browse properties,
+          and schedule appointments through one simple and user-friendly system.
+        </p>
+      </div>
+
+      <div class="about-story-image reveal">
+        <img src="images/story.jpg" alt="Real estate team meeting" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="mission-section">
+    <div class="mission-header">
+      <span class="mission-tag">Mission & Vision</span>
+      <h2>What drives our platform</h2>
+      <p>
+        Our focus is to simplify property decisions and create a more trusted
+        real estate experience for every user.
+      </p>
+    </div>
+
+    <div class="mission-container">
+      <div class="mission-card reveal">
+        <h3>Our Mission</h3>
+        <p>
+          To help buyers, sellers, and renters connect with trusted real estate
+          agents easily, compare options clearly, and book appointments with confidence.
+        </p>
+      </div>
+
+      <div class="mission-card reveal">
+        <h3>Our Vision</h3>
+        <p>
+          To become a leading digital real estate support platform in Sri Lanka,
+          where users can discover properties and trusted professionals in one place.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Offer -->
+  <section class="about-features">
+    <div class="about-features-header">
+      <span class="about-features-tag">What We Offer</span>
+      <h2>Everything you need in one platform</h2>
+      <p>
+        Our system is built to support users through every stage of their property journey.
+      </p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <h4>Find Trusted Agents</h4>
+        <p>Browse verified professionals based on location, expertise, and experience.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <h4>Browse Properties</h4>
+        <p>Explore houses, apartments, land, and commercial properties with ease.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <h4>Book Appointments</h4>
+        <p>Schedule meetings with agents quickly through a simple appointment system.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <h4>Compare Options</h4>
+        <p>Review professionals and listings to choose the best fit for your needs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="why-about-section">
+    <div class="why-about-header">
+      <span class="why-about-tag">Why Choose Us</span>
+      <h2>Why users trust our platform</h2>
+      <p>
+        We focus on trust, simplicity, and a better user experience for real estate decisions.
+      </p>
+    </div>
+
+    <div class="why-about-grid">
+      <div class="why-about-card reveal">
+        <h3>Verified Professionals</h3>
+        <p>Users can connect with trusted agents and feel more confident in their decisions.</p>
+      </div>
+
+      <div class="why-about-card reveal">
+        <h3>Easy Booking Process</h3>
+        <p>Appointments can be requested quickly without a complicated process.</p>
+      </div>
+
+      <div class="why-about-card reveal">
+        <h3>User-Friendly Platform</h3>
+        <p>Clean navigation and search features make the system simple to use.</p>
+      </div>
+
+      <div class="why-about-card reveal">
+        <h3>Property-Focused Guidance</h3>
+        <p>We help users find not just listings, but the right support around them.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meet the Team -->
+  <section class="team-section">
+    <div class="team-header">
+      <span class="team-tag">Meet the Team</span>
+      <h2>The people behind the platform</h2>
+      <p>
+        A passionate team working to build a better property search and agent discovery experience.
+      </p>
+    </div>
+
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <img src="images/team1.jpg" alt="Team Member 1" />
+        <h4>Minuka Dinsitha</h4>
+        <p>Frontend Developer</p>
+      </div>
+
+      <div class="team-card reveal">
+        <img src="images/team2.jpg" alt="Team Member 2" />
+        <h4>Minuka Dinsitha</h4>
+        <p>Backend Developer</p>
+      </div>
+
+      <div class="team-card reveal">
+        <img src="images/team3.jpg" alt="Team Member 3" />
+        <h4>Minuka Dinsitha</h4>
+        <p>UI / UX Designer</p>
+      </div>
+
+      <div class="team-card reveal">
+        <img src="images/team4.jpg" alt="Team Member 4" />
+        <h4>Minuka Dinsitha</h4>
+        <p>Project Coordinator</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats-section">
+    <div class="stats-grid">
+      <div class="stat reveal">
+        <h3>500+</h3>
+        <p>Properties Listed</p>
+      </div>
+
+      <div class="stat reveal">
+        <h3>100+</h3>
+        <p>Trusted Agents</p>
+      </div>
+
+      <div class="stat reveal">
+        <h3>1000+</h3>
+        <p>Happy Users</p>
+      </div>
+
+      <div class="stat reveal">
+        <h3>24/7</h3>
+        <p>Support Availability</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="about-cta">
+    <span class="about-cta-tag">Get Started</span>
+    <h2>Ready to start your property journey?</h2>
+    <p>
+      Discover trusted agents, browse listings, and connect with the right professionals today.
+    </p>
+
+    <div class="about-cta-buttons">
+      <a href="agents.html" class="btn-primary">Find Agents</a>
+      <a href="properties.html" class="btn-secondary">Browse Properties</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3>Real Estate Agent Finder</h3>
+        <p>
+          Helping buyers, sellers, and renters connect with trusted real estate professionals across Sri Lanka.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Support</a>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>Email: support@realestate.com</p>
+        <p>Phone: +94 77 123 4567</p>
+      </div>
+
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 Real Estate Agent Finder. All rights reserved.
+    </div>
+  </footer>
+
+
+
+<!-- AUTH MODAL -->
+<div class="auth-modal-overlay" id="authModal">
+  <div class="auth-modal">
+    <button class="close-modal" type="button" onclick="closeModal()">&times;</button>
+
+    <h2 id="authTitle">Log in</h2>
+    <p id="authSubtitle" style="margin-top:-8px;color:#666;">Use your account details to continue.</p>
+
+    <form class="auth-form" id="authForm">
+      <div id="signupFields" style="display:none;">
+        <div class="label-row">
+          <label for="authName">Full name</label>
+          <span>required</span>
+        </div>
+        <input type="text" id="authName" placeholder="Enter your full name" />
+
+        <div class="label-row">
+          <label for="authPhone">Phone number</label>
+          <span>required</span>
+        </div>
+        <input type="tel" id="authPhone" placeholder="Enter your phone number" />
+      </div>
+
+      <div class="label-row">
+        <label for="authEmail">Email address</label>
+        <span>required</span>
+      </div>
+      <input type="email" id="authEmail" placeholder="Enter your email" required />
+
+      <div class="label-row">
+        <label for="authPassword">Password</label>
+        <span>required</span>
+      </div>
+      <input type="password" id="authPassword" placeholder="Enter your password" required />
+
+      <button type="submit" class="continue-btn" id="continueBtn">Log in</button>
+    </form>
+
+    <p style="text-align:center;margin-top:16px;">
+      <span id="switchText">Don't have an account?</span>
+      <a href="#" id="switchAuthLink">Sign up</a>
+    </p>
+
+    <div class="agent-links">
+      <h4>Admin demo login</h4>
+      <p>Email: <strong>admin@gmail.com</strong></p>
+      <p>Password: <strong>admin123</strong></p>
+    </div>
+
+    <p class="terms-text">
+      By creating an account you agree to RealtorSL’s
+      <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.
+    </p>
+  </div>
+</div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
