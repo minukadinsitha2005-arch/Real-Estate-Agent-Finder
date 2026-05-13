@@ -1,0 +1,28 @@
+RealtorSL Fixed Project - Quick Start
+
+Main fixes done:
+1. Login and Sign up modal now opens correctly.
+2. Modal close works with X button, outside click, and Esc key.
+3. Reveal/scroll animations now work using IntersectionObserver.
+4. Extra hover and hero/navbar animations added without changing your theme.
+5. Frontend files are synced into Spring Boot static folder.
+6. Database SQL file added inside database/real_estate_agent_finder.sql.
+
+How to run:
+1. Open MySQL Workbench.
+2. Run database/real_estate_agent_finder.sql.
+3. Open src/main/resources/application.properties.
+4. Change spring.datasource.password to your MySQL root password.
+5. Open project in IntelliJ IDEA.
+6. Run RealEstateBackendApplication.java.
+7. Open browser:
+   http://localhost:8080/index.html
+
+Demo login:
+Admin email: admin@gmail.com
+Admin password: admin123
+User email: user@gmail.com
+User password: user123
+
+Important:
+Use http://localhost:8080/index.html when testing with the backend.
