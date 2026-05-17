@@ -90,7 +90,7 @@
   </section>
 
   <!-- Individual Agents -->
-  <section class="agents-list-section">
+  <section class="agents-list-section" id="agentsListSection">
     <div class="agents-list-header">
       <span class="agents-list-tag">Top Individual Agents</span>
       <h2>Browse experienced real estate professionals</h2>
@@ -218,7 +218,7 @@
 
     <div class="companies-grid">
       <div class="company-card reveal">
-        <img src="images/company1.jpg" alt="Prime Lands Realty" />
+        <img src="images/PrimeLands.jpeg" alt="Prime Lands Realty" />
         <div class="company-content">
           <span class="company-badge">Trusted Agency</span>
           <h3>Prime Lands Realty</h3>
@@ -228,12 +228,13 @@
             A trusted real estate company helping clients buy, sell, and invest
             with confidence across premium urban locations.
           </p>
-          <a href="contact.html" class="company-btn">View Company</a>
+          <button type="button" class="company-btn" onclick='displayCompanyProfile({"name": "Prime Lands Realty", "city": "Colombo", "imageUrl": "images/PrimeLands.jpg", "badge": "Trusted Agency", "description": "A trusted real estate company helping clients buy, sell, and invest with confidence across premium urban locations.", "email": "", "phone": "", "address": ""})'>Display Profile</button>
+          <button type="button" class="company-btn" onclick="goToAppointmentFor('Prime Lands Realty', 'Company Appointment')">Book Appointment</button>
         </div>
       </div>
 
       <div class="company-card reveal">
-        <img src="images/company2.jpg" alt="Lanka Property Hub" />
+        <img src="images/Hub.png" alt="Lanka Property Hub" />
         <div class="company-content">
           <span class="company-badge">Verified Network</span>
           <h3>Lanka Property Hub</h3>
@@ -243,12 +244,13 @@
             A professional real estate company offering local market expertise,
             rental support, and residential property services.
           </p>
-          <a href="contact.html" class="company-btn">View Company</a>
+          <button type="button" class="company-btn" onclick='displayCompanyProfile({"name": "Lanka Property Hub", "city": "Kandy", "imageUrl": "images/Hub.jpg", "badge": "Verified Network", "description": "A professional real estate company offering local market expertise, rental support, and residential property services.", "email": "", "phone": "", "address": ""})'>Display Profile</button>
+          <button type="button" class="company-btn" onclick="goToAppointmentFor('Lanka Property Hub', 'Company Appointment')">Book Appointment</button>
         </div>
       </div>
 
       <div class="company-card reveal">
-        <img src="images/company3.jpg" alt="South Coast Estates" />
+        <img src="images/Southcoast.png" alt="South Coast Estates" />
         <div class="company-content">
           <span class="company-badge">Top Rated</span>
           <h3>South Coast Estates</h3>
@@ -258,22 +260,24 @@
             Helping clients discover premium southern properties, investment
             opportunities, and trusted real estate services.
           </p>
-          <a href="contact.html" class="company-btn">View Company</a>
+          <button type="button" class="company-btn" onclick='displayCompanyProfile({"name": "South Coast Estates", "city": "Galle", "imageUrl": "images/Southcoast.jpg", "badge": "Top Rated", "description": "Helping clients discover premium southern properties, investment opportunities, and trusted real estate services.", "email": "", "phone": "", "address": ""})'>Display Profile</button>
+          <button type="button" class="company-btn" onclick="goToAppointmentFor('South Coast Estates', 'Company Appointment')">Book Appointment</button>
         </div>
       </div>
 
       <div class="company-card reveal">
-        <img src="images/company4.jpg" alt="Urban Space Realty" />
+        <img src="images/mT.jpeg" alt="MisterT Realtor" />
         <div class="company-content">
           <span class="company-badge">Professional Agency</span>
-          <h3>Urban Space Realty</h3>
+          <h3>MisterT Realtor</h3>
           <p><strong>Location:</strong> Negombo</p>
           <p><strong>Specialties:</strong> Commercial, Offices, Apartments</p>
           <p class="company-description">
             Supports clients with city apartments, business spaces, and
             commercial property decisions through one trusted network.
           </p>
-          <a href="contact.html" class="company-btn">View Company</a>
+          <button type="button" class="company-btn" onclick='displayCompanyProfile({"name": "MisterT Realtor", "city": "Negombo", "imageUrl": "images/mT.jpg", "badge": "Professional Agency", "description": "Supports clients with city apartments, business spaces, and commercial property decisions through one trusted network.", "email": "", "phone": "", "address": ""})'>Display Profile</button>
+          <button type="button" class="company-btn" onclick="goToAppointmentFor('MisterT Realtor', 'Company Appointment')">Book Appointment</button>
         </div>
       </div>
     </div>

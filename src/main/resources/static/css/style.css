@@ -5515,3 +5515,40 @@ section {
 .property-card {
   cursor: pointer;
 }
+
+/* Direct link target for homepage View Profile buttons */
+#agentsListSection {
+  scroll-margin-top: 24px;
+}
+
+
+/* Direct link target for homepage property View Details buttons */
+#featuredProperties {
+  scroll-margin-top: 24px;
+}
+
+/* Company card image alignment fix - keeps the same card layout and buttons */
+.companies-grid .company-card > img {
+  width: 100%;
+  height: 260px;
+  object-fit: contain;
+  object-position: center center;
+  background: #ffffff;
+  padding: 18px;
+  border-bottom: 1px solid rgba(22, 163, 74, 0.08);
+}
+
+.companies-grid .company-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.companies-grid .company-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.companies-grid .company-content .company-btn:first-of-type {
+  margin-top: auto;
+}

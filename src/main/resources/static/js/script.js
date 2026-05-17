@@ -213,9 +213,72 @@ function searchAgents() {
 }
 
 // COMPANIES
+
+function getCompanyCardData(card) {
+  const getText = (selector) => card.querySelector(selector)?.textContent.trim() || "";
+  const paragraphs = Array.from(card.querySelectorAll("p"));
+  const findValue = (label) => {
+    const row = paragraphs.find(p => p.textContent.trim().toLowerCase().startsWith(label.toLowerCase() + ":"));
+    return row ? row.textContent.replace(new RegExp("^" + label + ":", "i"), "").trim() : "";
+  };
+  return {
+    name: getText("h3"),
+    city: findValue("Location"),
+    email: findValue("Email"),
+    phone: findValue("Phone"),
+    address: findValue("Address"),
+    imageUrl: card.querySelector("img")?.getAttribute("src") || "images/meeting.jpg",
+    badge: getText(".company-badge") || "Verified Network",
+    description: getText(".company-description")
+  };
+}
+
+function enhanceStaticCompanyCards() {
+  const grid = document.querySelector(".companies-grid");
+  if (!grid) return false;
+  const cards = Array.from(grid.querySelectorAll(".company-card"));
+  if (!cards.length) return false;
+
+  cards.forEach(card => {
+    const company = getCompanyCardData(card);
+    const content = card.querySelector(".company-content");
+    if (!content || !company.name) return;
+
+    // Keep the exact card layout, but make the buttons work with the same actions as dynamic backend cards.
+    content.querySelectorAll(".company-btn").forEach(btn => btn.remove());
+
+    const displayBtn = document.createElement("button");
+    displayBtn.type = "button";
+    displayBtn.className = "company-btn";
+    displayBtn.textContent = "Display Profile";
+    displayBtn.addEventListener("click", () => displayCompanyProfile(company));
+
+    const appointmentBtn = document.createElement("button");
+    appointmentBtn.type = "button";
+    appointmentBtn.className = "company-btn";
+    appointmentBtn.textContent = "Book Appointment";
+    appointmentBtn.addEventListener("click", () => goToAppointmentFor(company.name, "Company Appointment"));
+
+    content.appendChild(displayBtn);
+    content.appendChild(appointmentBtn);
+  });
+
+  revealOnScroll();
+  return true;
+}
+
 async function loadCompanies(searchParams = {}) {
   const grid = document.querySelector(".companies-grid");
   if (!grid) return;
+
+  // IMPORTANT: Do not overwrite the company cards written in agents.html.
+  // This lets your edited names, images, and information show exactly as you wrote them,
+  // while keeping the same Display Profile and Book Appointment buttons.
+  if (grid.querySelector(".company-card")) {
+    enhanceStaticCompanyCards();
+    return;
+  }
+
   grid.innerHTML = "<p style='color:#888;padding:20px;'>Loading companies...</p>";
   try {
     const params = new URLSearchParams(searchParams); const url = "/companies" + (params.toString() ? `?${params}` : "");
@@ -501,6 +564,16 @@ function setupAdminPage() {
   loadAdminAgents(); loadAdminProperties(); loadAdminCompanies(); loadAdminAppointments(); loadAdminContactMessages(); loadAdminViewings();
 }
 
+
+function scrollToHashTarget() {
+  if (!window.location.hash) return;
+  const target = document.querySelector(window.location.hash);
+  if (!target) return;
+  setTimeout(() => {
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, 150);
+}
+
 function setupHomeSmoothLinks() { document.querySelectorAll('a[href^="#"]').forEach(link => link.addEventListener("click", e => { const target=document.querySelector(link.getAttribute("href")); if(target){e.preventDefault(); target.scrollIntoView({behavior:"smooth", block:"start"});}})); }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -510,5 +583,5 @@ document.addEventListener("DOMContentLoaded", function () {
   if (page.includes("properties.html")) { const params=new URLSearchParams(window.location.search); loadProperties(params.get("keyword") ? { keyword: params.get("keyword") } : {}); document.querySelector(".hero .search-box button")?.addEventListener("click", searchProperties); }
   const appointmentForm = document.querySelector(".support-form-grid:not(#propertyViewingForm)"); if (appointmentForm) appointmentForm.addEventListener("submit", submitAppointmentForm);
   const contactForm = document.querySelector(".contact-form-grid"); if (contactForm) contactForm.addEventListener("submit", submitContactForm);
-  setupAdminPage(); revealOnScroll();
+  setupAdminPage(); revealOnScroll(); scrollToHashTarget();
 });
