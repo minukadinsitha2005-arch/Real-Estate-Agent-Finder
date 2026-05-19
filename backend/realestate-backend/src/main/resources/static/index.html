@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real Estate</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<header class="navbar">
+
+<div class="logo">
+  <img src="images/logo.png" alt="Real Estate Agent Finder Logo">
+  <span>RealtorSL</span>
+</div>
+
+
+<nav class="nav-menu">
+<a href="index.html" class="active">Home</a>
+<a href="agents.html">Find Agents</a>
+<a href="properties.html">Properties</a>
+<a href="appointments.html">Appointments</a>
+<a href="about.html">About Us</a>
+<a href="contact.html">Contact Us</a>
+</nav>
+<div class="auth">
+<div class="auth-buttons" id="authButtons">
+<button class="login-btn" onclick="openModal('login')">Log in</button>
+<button class="signup-btn" onclick="openModal('signup')">Sign up</button>
+</div>
+</div>
+
+</header>
+
+
+<!-- Hero Section -->
+
+<section class="hero">
+
+<div class="hero-fade"></div>
+
+<div class="overlay">
+
+<h1>Sri Lanka’s Most Trusted Professional Network.</h1>
+
+
+
+<div class="search-box">
+
+<input type="text" placeholder="Describe the home you want">
+
+<button onclick="searchHome()">Search</button>
+
+</div>
+
+</div>
+
+</section>
+
+</section>
+
+<!-- Find Agents Introduction Section -->
+<section class="how-realtor">
+  <div class="how-realtor-header">
+    <span class="how-realtor-tag">How it works</span>
+    <h2>Understand how the platform works</h2>
+    <p>
+      Explore agents, search properties, book appointments, and complete your
+      property journey through one simple and guided experience.
+    </p>
+  </div>
+
+  <div class="how-realtor-steps reveal">
+    <div class="how-realtor-step reveal">
+      <div class="step-no">01</div>
+      <h3>Find Agents</h3>
+      <p>Browse trusted real estate agents based on your location and needs.</p>
+    </div>
+
+    <div class="how-realtor-step reveal">
+      <div class="step-no">02</div>
+      <h3>Search Properties</h3>
+      <p>Explore homes, apartments, and rentals that match your preferences.</p>
+    </div>
+
+    <div class="how-realtor-step reveal">
+      <div class="step-no">03</div>
+      <h3>Book Appointments</h3>
+      <p>Schedule meetings or property visits directly with your chosen agent.</p>
+    </div>
+
+    <div class="how-realtor-step reveal">
+      <div class="step-no">04</div>
+      <h3>Close the Deal</h3>
+      <p>Move forward confidently with expert support throughout the process.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="property-categories">
+  <div class="property-categories-header">
+    <span class="property-categories-tag">Browse Properties</span>
+    <h2>Explore property categories for every need</h2>
+    <p>
+      Discover listings by category to quickly find homes for sale, rental spaces,
+      open houses, land, and newly built properties.
+    </p>
+  </div>
+
+  <div class="property-categories-grid">
+    <div class="property-card reveal" onclick="window.location.href='properties.html#propertyCategories'">
+      <img src="images/newlistings.jpg" alt="New Listings">
+      <div class="property-card-content">
+        <h3>New Listings</h3>
+        <p>See the latest homes and properties added to the platform.</p>
+      </div>
+    </div>
+
+    <div class="property-card reveal" onclick="window.location.href='properties.html#propertyCategories'">
+      <img src="images/pricereduced.jpg" alt="Price Reduced">
+      <div class="property-card-content">
+        <h3>Price Reduced</h3>
+        <p>Find properties with updated pricing and better value.</p>
+      </div>
+    </div>
+
+    <div class="property-card reveal" onclick="window.location.href='properties.html#propertyCategories'">
+      <img src="images/openhouses.jpg" alt="Open Houses">
+      <div class="property-card-content">
+        <h3>Open Houses</h3>
+        <p>Browse homes currently available for public viewing.</p>
+      </div>
+    </div>
+
+    <div class="property-card reveal" onclick="window.location.href='properties.html#propertyCategories'">
+      <img src="images/apartments.jpg" alt="Apartments">
+      <div class="property-card-content">
+        <h3>Apartments</h3>
+        <p>Explore apartment options for individuals and families.</p>
+      </div>
+    </div>
+
+    <div class="property-card reveal" onclick="window.location.href='properties.html#propertyCategories'">
+      <img src="images/lands.jpg" alt="Land">
+      <div class="property-card-content">
+        <h3>Land</h3>
+        <p>Search land listings for investment or future construction.</p>
+      </div>
+    </div>
+
+    <div class="property-card reveal" onclick="window.location.href='properties.html#propertyCategories'">
+      <img src="images/underconstruction.jpg" alt="New Construction">
+      <div class="property-card-content">
+        <h3>Under Construction</h3>
+        <p>View ongoing development projects.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="featured-agents premium-agents-section" id="homeAgentsSection">
+  <div class="featured-agents-header">
+    <span class="featured-agents-tag">FEATURED AGENTS</span>
+    <h2>Meet trusted real estate professionals</h2>
+    <p>
+      Connect with experienced agents who can help you buy, sell, or rent with confidence.
+      Explore top profiles and choose the right expert for your needs.
+    </p>
+  </div>
+
+  <div class="premium-agents-track simple-agents-row">
+    <div class="premium-agent-card reveal">
+      <img src="images/john.jpg" alt="John Silva">
+      <div class="premium-agent-content">
+        <h3>Dimuthu Weerasingha</h3>
+        <p><strong>Experience:</strong> 8 Years</p>
+        <p><strong>Location:</strong> Colombo</p>
+        <div class="premium-agent-rating">★★★★★</div>
+        <a href="agents.html#agentsListSection" class="premium-agent-btn">View Profile</a>
+      </div>
+    </div>
+
+    <div class="premium-agent-card reveal">
+      <img src="images/Nimali.jpg" alt="Nimali Perera">
+      <div class="premium-agent-content">
+        <h3>Nimali Perera</h3>
+        <p><strong>Experience:</strong> 6 Years</p>
+        <p><strong>Location:</strong> Kandy</p>
+        <div class="premium-agent-rating">★★★★★</div>
+        <a href="agents.html#agentsListSection" class="premium-agent-btn">View Profile</a>
+      </div>
+    </div>
+
+    <div class="premium-agent-card reveal">
+      <img src="images/ashan.jpg" alt="Ashan Fernando">
+      <div class="premium-agent-content">
+        <h3>Ashan Fernando</h3>
+        <p><strong>Experience:</strong> 10 Years</p>
+        <p><strong>Location:</strong> Galle</p>
+        <div class="premium-agent-rating">★★★★★</div>
+        <a href="agents.html#agentsListSection" class="premium-agent-btn">View Profile</a>
+      </div>
+    </div>
+
+    <a href="agents.html" class="premium-agent-card more-agents-card reveal">
+      <div class="more-agents-inner">
+        <div class="more-agents-icon">+</div>
+        <h3>More Agents</h3>
+        <p>Explore more trusted real estate professionals across Sri Lanka.</p>
+        <span class="more-agents-link">Browse All Agents</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="appointment-section" id="homeAppointmentSection">
+  <div class="appointment-container">
+
+    <div class="appointment-text reveal">
+      <span class="appointment-tag">Book Appointment</span>
+
+      <h2>Meet with a Real Estate Expert</h2>
+
+      <p>
+        Schedule appointments with trusted agents to discuss buying,
+        selling, or renting properties. Our professionals will guide you
+        through every step of your property journey.
+      </p>
+
+      <a href="appointments.html" class="appointment-btn">
+        Book Appointment
+      </a>
+    </div>
+
+    <div class="appointment-image reveal">
+      <img src="images/meeting.jpg" alt="Agent Meeting">
+    </div>
+
+  </div>
+</section>
+
+<section class="featured-properties">
+  <div class="featured-properties-header">
+    <span class="featured-properties-tag">Featured Properties</span>
+    <h2>Discover homes selected for you</h2>
+    <p>
+      Browse premium listings including apartments, family homes, and modern
+      properties available for sale or rent in top locations.
+    </p>
+  </div>
+
+  <div class="featured-properties-grid">
+    <div class="featured-property-card reveal">
+      <img src="images/luxuryaprtment.jpg" alt="Luxury Apartment">
+      <div class="featured-property-content">
+        <h3>Luxury Apartment</h3>
+        <div class="featured-price">Rs.20 000 000/=</div>
+        <p>3 Beds | 2 Baths</p>
+        <p>Colombo</p>
+        <a href="properties.html#featuredProperties" class="featured-property-btn">View Details</a>
+      </div>
+    </div>
+
+    <div class="featured-property-card reveal">
+      <img src="images/modernhouse.jpg" alt="Modern Family House">
+      <div class="featured-property-content">
+        <h3>Modern Family House</h3>
+        <div class="featured-price">Rs.30 000 000/=</div>
+        <p>4 Beds | 3 Baths</p>
+        <p>Kandy</p>
+        <a href="properties.html#featuredProperties" class="featured-property-btn">View Details</a>
+      </div>
+    </div>
+
+    <div class="featured-property-card reveal">
+      <img src="images/seaview.jpg" alt="Sea View Villa">
+      <div class="featured-property-content">
+        <h3>Sea View Villa</h3>
+        <div class="featured-price">Rs.100 000 000/=</div>
+        <p>5 Beds | 4 Baths</p>
+        <p>Galle</p>
+        <a href="properties.html#featuredProperties" class="featured-property-btn">View Details</a>
+      </div>
+    </div>
+
+    <div class="featured-property-card reveal">
+      <div class="property-card more-card" onclick="goToProperties()">
+  <div class="more-inner">
+    
+    <div class="more-icon">🏠</div>
+
+    <h2>Explore More</h2>
+    <p>120+ Premium Properties Available</p>
+
+    <div class="more-arrow">→</div>
+
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-box reveal">
+    <span class="cta-tag">Get Started</span>
+    <h2>Start your property journey today</h2>
+    <p>
+      Find trusted agents, explore beautiful properties, and book appointments
+      through one smooth and professional platform.
+    </p>
+
+    <div class="cta-buttons">
+      <a href="agents.html" class="cta-btn primary">Find Agents</a>
+      <a href="properties.html" class="cta-btn secondary">Browse Properties</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+
+  <div class="footer-container">
+
+    <div class="footer-brand">
+      <h3>Real Estate Agent Finder</h3>
+      <p>
+        Helping buyers, sellers, and renters connect with trusted
+        real estate professionals across Sri Lanka.
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Company</h4>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Support</a>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>Email: support@realestate.com</p>
+      <p>Phone: +94 77 123 4567</p>
+    </div>
+
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Real Estate Agent Finder. All rights reserved.
+  </div>
+
+</footer>
+
+
+<!-- AUTH MODAL -->
+<div class="auth-modal-overlay" id="authModal">
+  <div class="auth-modal">
+    <button class="close-modal" type="button" onclick="closeModal()">&times;</button>
+
+    <h2 id="authTitle">Log in</h2>
+    <p id="authSubtitle" style="margin-top:-8px;color:#666;">Use your account details to continue.</p>
+
+    <form class="auth-form" id="authForm">
+      <div id="signupFields" style="display:none;">
+        <div class="label-row">
+          <label for="authName">Full name</label>
+          <span>required</span>
+        </div>
+        <input type="text" id="authName" placeholder="Enter your full name" />
+
+        <div class="label-row">
+          <label for="authPhone">Phone number</label>
+          <span>required</span>
+        </div>
+        <input type="tel" id="authPhone" placeholder="Enter your phone number" />
+      </div>
+
+      <div class="label-row">
+        <label for="authEmail">Email address</label>
+        <span>required</span>
+      </div>
+      <input type="email" id="authEmail" placeholder="Enter your email" required />
+
+      <div class="label-row">
+        <label for="authPassword">Password</label>
+        <span>required</span>
+      </div>
+      <input type="password" id="authPassword" placeholder="Enter your password" required />
+
+      <button type="submit" class="continue-btn" id="continueBtn">Log in</button>
+    </form>
+
+    <p style="text-align:center;margin-top:16px;">
+      <span id="switchText">Don't have an account?</span>
+      <a href="#" id="switchAuthLink">Sign up</a>
+    </p>
+
+    <div class="agent-links">
+      <h4>Admin demo login</h4>
+      <p>Email: <strong>admin@gmail.com</strong></p>
+      <p>Password: <strong>admin123</strong></p>
+    </div>
+
+    <p class="terms-text">
+      By creating an account you agree to RealtorSL’s
+      <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.
+    </p>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
+
