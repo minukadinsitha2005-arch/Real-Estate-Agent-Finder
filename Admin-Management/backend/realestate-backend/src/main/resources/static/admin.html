@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard - RealtorSL</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="admin-page">
+  <header class="navbar">
+    <div class="logo">
+      <img src="images/logo.png" alt="RealtorSL Logo" />
+      <span>RealtorSL</span>
+    </div>
+
+    <nav class="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="agents.html">Find Agents</a>
+      <a href="properties.html">Properties</a>
+      <a href="appointments.html">Appointments</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <div class="auth">
+      <div class="auth-buttons" id="authButtons"></div>
+    </div>
+  </header>
+
+  <section class="admin-hero">
+    <div class="admin-hero-inner">
+      <div>
+        <span class="admin-tag">Admin Panel</span>
+        <h1>Manage RealtorSL</h1>
+        <p id="adminWelcome">Welcome, Admin</p>
+      </div>
+      <div class="admin-actions">
+        <a href="index.html" class="admin-btn secondary">Go to Website</a>
+        <button class="admin-btn danger" onclick="logout()">Logout</button>
+      </div>
+    </div>
+  </section>
+
+  <main class="admin-wrap" id="adminDashboard">
+    <div class="admin-grid">
+      <section class="admin-card reveal visible">
+        <h2>Add Agent</h2>
+        <p class="admin-card-subtitle">Create a new real estate agent profile. It will save to the Spring Boot backend and MySQL database.</p>
+
+        <form class="admin-form" id="addAgentForm">
+          <div>
+            <label>Agent name</label>
+            <input name="agentName" placeholder="Example: Test Agent" required />
+          </div>
+
+          <div>
+            <label>Email</label>
+            <input name="agentEmail" type="email" placeholder="agent@gmail.com" required />
+          </div>
+
+          <div>
+            <label>Phone</label>
+            <input name="agentPhone" placeholder="0771234567" required />
+          </div>
+
+          <div>
+            <label>Location</label>
+            <input name="agentLocation" placeholder="Colombo" required />
+          </div>
+
+          <div>
+            <label>Specialization</label>
+            <input name="agentSpecialization" placeholder="Luxury Homes" required />
+          </div>
+
+          <div>
+            <label>Experience years</label>
+            <input name="experienceYears" type="number" placeholder="5" required />
+          </div>
+
+          <div>
+            <label>Image URL</label>
+            <input name="imageUrl" placeholder="images/agent1.jpg" value="images/agent1.jpg" />
+          </div>
+
+          <div>
+            <label>Rating</label>
+            <input name="rating" type="number" step="0.1" placeholder="5" value="5" />
+          </div>
+
+          <div>
+            <label>Badge</label>
+            <input name="badge" placeholder="Verified" value="Verified" />
+          </div>
+
+          <div class="full">
+            <label>Description</label>
+            <textarea name="description" placeholder="Write a short agent description"></textarea>
+          </div>
+
+          <div class="full">
+            <button class="admin-btn" type="submit">Add Agent</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="admin-card reveal visible">
+        <h2>Add Property</h2>
+        <p class="admin-card-subtitle">Add property listings that users can browse from the properties page.</p>
+
+        <form class="admin-form" id="addPropertyForm">
+          <div>
+            <label>Property title</label>
+            <input name="title" placeholder="Luxury Apartment" required />
+          </div>
+
+          <div>
+            <label>Property type</label>
+            <select name="type" required>
+              <option value="Apartment">Apartment</option>
+              <option value="House">House</option>
+              <option value="Villa">Villa</option>
+              <option value="Land">Land</option>
+              <option value="Commercial">Commercial</option>
+            </select>
+          </div>
+
+          <div>
+            <label>Location</label>
+            <input name="location" placeholder="Colombo" required />
+          </div>
+
+          <div>
+            <label>Price</label>
+            <input name="price" type="number" placeholder="20000000" required />
+          </div>
+
+          <div>
+            <label>Bedrooms</label>
+            <input name="bedrooms" type="number" placeholder="3" value="0" />
+          </div>
+
+          <div>
+            <label>Bathrooms</label>
+            <input name="bathrooms" type="number" placeholder="2" value="1" />
+          </div>
+
+          <div>
+            <label>Image URL</label>
+            <input name="imageUrl" placeholder="images/property1.jpg" value="images/property1.jpg" />
+          </div>
+
+          <div>
+            <label>Agent name</label>
+            <input name="agentName" placeholder="Agent name" />
+          </div>
+
+          <div>
+            <label>Status</label>
+            <input name="status" placeholder="Available" value="Available" />
+          </div>
+
+          <div class="full">
+            <label>Description</label>
+            <textarea name="description" placeholder="Write a short property description"></textarea>
+          </div>
+
+          <div class="full">
+            <button class="admin-btn" type="submit">Add Property</button>
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <div class="admin-grid">
+      <section class="admin-card reveal visible">
+        <h2>Current Agents</h2>
+        <p class="admin-card-subtitle">View and delete existing agents.</p>
+        <div class="admin-list" id="adminAgentsList">Loading...</div>
+      </section>
+
+      <section class="admin-card reveal visible">
+        <h2>Current Properties</h2>
+        <p class="admin-card-subtitle">View and delete existing property listings.</p>
+        <div class="admin-list" id="adminPropertiesList">Loading...</div>
+      </section>
+    </div>
+
+    <section class="admin-card reveal visible">
+      <h2>Appointments</h2>
+      <p class="admin-card-subtitle">See appointment requests submitted by users.</p>
+      <div class="admin-list" id="adminAppointmentsList">Loading...</div>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
