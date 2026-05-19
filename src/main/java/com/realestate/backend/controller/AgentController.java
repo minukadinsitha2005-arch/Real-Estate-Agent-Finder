@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-// REST Controller for Agent API
 // All endpoints start with /api/agents
 @RestController
 @RequestMapping("/api/agents")

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-// REST Controller for Property API
 // All endpoints start with /api/properties
 @RestController
 @RequestMapping("/api/properties")

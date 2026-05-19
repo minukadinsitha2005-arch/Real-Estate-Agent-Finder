@@ -2,11 +2,11 @@ package com.realestate.backend.model;
 
 import jakarta.persistence.*;
 
-// -------------------------------------------------------
+
 // OOP CONCEPT: ENCAPSULATION
 // All fields are private. Access is through getters/setters.
 // Fields match the contact.html form exactly.
-// -------------------------------------------------------
+
 @Entity
 @Table(name = "contact_messages")
 public class ContactMessage {
@@ -36,14 +36,14 @@ public class ContactMessage {
     @Column(columnDefinition = "TEXT")
     private String message;
 
-    // -------------------------------------------------------
+
     // Constructors
-    // -------------------------------------------------------
+
     public ContactMessage() {}
 
-    // -------------------------------------------------------
+
     // Getters and Setters (Encapsulation)
-    // -------------------------------------------------------
+
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 

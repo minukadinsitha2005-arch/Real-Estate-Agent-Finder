@@ -2,10 +2,10 @@ package com.realestate.backend.model;
 
 import jakarta.persistence.*;
 
-// -------------------------------------------------------
+
 // OOP CONCEPT: ENCAPSULATION
 // All fields are private. Access is through getters/setters.
-// -------------------------------------------------------
+
 @Entity
 @Table(name = "properties")
 public class Property {
@@ -44,9 +44,9 @@ public class Property {
     @Column
     private String status = "Available"; // default status
 
-    // -------------------------------------------------------
+
     // Constructors
-    // -------------------------------------------------------
+
     public Property() {}
 
     public Property(String title, String type, String location, double price,
@@ -64,9 +64,9 @@ public class Property {
         this.status = status;
     }
 
-    // -------------------------------------------------------
+
     // Getters and Setters (Encapsulation)
-    // -------------------------------------------------------
+
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 

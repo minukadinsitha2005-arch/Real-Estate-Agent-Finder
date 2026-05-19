@@ -2,13 +2,13 @@ package com.realestate.backend.model;
 
 import jakarta.persistence.*;
 
-// -------------------------------------------------------
+
 // OOP CONCEPT: INHERITANCE
 // Person is the parent class (base class).
 // Agent and User will extend (inherit from) this class.
 // @MappedSuperclass means JPA will include these fields
 // in the child class tables, not create a separate table.
-// -------------------------------------------------------
+
 @MappedSuperclass
 public abstract class Person {
 
@@ -26,9 +26,9 @@ public abstract class Person {
     @Column
     private String phone;
 
-    // -------------------------------------------------------
+
     // Constructors
-    // -------------------------------------------------------
+
     public Person() {}
 
     public Person(String name, String email, String phone) {
@@ -37,9 +37,9 @@ public abstract class Person {
         this.phone = phone;
     }
 
-    // -------------------------------------------------------
+
     // Getters and Setters (Encapsulation)
-    // -------------------------------------------------------
+
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 

@@ -271,9 +271,7 @@ async function loadCompanies(searchParams = {}) {
   const grid = document.querySelector(".companies-grid");
   if (!grid) return;
 
-  // IMPORTANT: Do not overwrite the company cards written in agents.html.
-  // This lets your edited names, images, and information show exactly as you wrote them,
-  // while keeping the same Display Profile and Book Appointment buttons.
+
   if (grid.querySelector(".company-card")) {
     enhanceStaticCompanyCards();
     return;
@@ -578,9 +576,9 @@ function setupHomeSmoothLinks() { document.querySelectorAll('a[href^="#"]').forE
 
 
 
-// -------------------------------------------------------
+
 // Hero tabs and search actions for every main page
-// -------------------------------------------------------
+
 function smoothScrollTo(selector) {
   const target = document.querySelector(selector);
   if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });

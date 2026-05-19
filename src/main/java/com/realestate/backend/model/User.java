@@ -2,11 +2,11 @@ package com.realestate.backend.model;
 
 import jakarta.persistence.*;
 
-// -------------------------------------------------------
+
 // OOP CONCEPT: INHERITANCE
 // User extends Person, so it inherits id, name, email,
 // and phone from the Person class automatically.
-// -------------------------------------------------------
+
 @Entity
 @Table(name = "users")
 public class User extends Person {
@@ -14,16 +14,14 @@ public class User extends Person {
     // OOP CONCEPT: ENCAPSULATION - all fields are private
     @Column(nullable = false)
     private String password;
-    // NOTE: In a real system, passwords should be hashed
-    // (e.g. using BCrypt). Plain text is used here for
-    // simplicity in this beginner OOP assignment.
+
 
     @Column
     private String role = "USER"; // default role
 
-    // -------------------------------------------------------
+
     // Constructors
-    // -------------------------------------------------------
+
     public User() {}
 
     public User(String name, String email, String phone,
@@ -33,9 +31,9 @@ public class User extends Person {
         this.role = role;
     }
 
-    // -------------------------------------------------------
+
     // Getters and Setters (Encapsulation)
-    // -------------------------------------------------------
+
     public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
 

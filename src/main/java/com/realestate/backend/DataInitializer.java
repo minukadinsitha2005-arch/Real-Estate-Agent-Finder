@@ -12,10 +12,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-// -------------------------------------------------------
+
 // DataInitializer runs once when the application starts.
 // It inserts sample data into the database if tables are empty.
-// -------------------------------------------------------
+
 @Component
 public class DataInitializer implements CommandLineRunner {
 
@@ -34,9 +34,9 @@ public class DataInitializer implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        // -------------------------------------------------------
+
         // Insert sample agents (only if the table is empty)
-        // -------------------------------------------------------
+
         if (agentRepository.count() == 0) {
 
             agentRepository.save(new Agent(
@@ -74,12 +74,12 @@ public class DataInitializer implements CommandLineRunner {
                     "Guides first-time buyers and families through smooth property decisions with clear communication."
             ));
 
-            System.out.println("✅ Sample agents inserted.");
+            System.out.println(" Sample agents inserted.");
         }
 
-        // -------------------------------------------------------
+
         // Insert sample properties (only if the table is empty)
-        // -------------------------------------------------------
+
         if (propertyRepository.count() == 0) {
 
             propertyRepository.save(new Property(
@@ -117,24 +117,24 @@ public class DataInitializer implements CommandLineRunner {
                     "images/lands.jpg", "John Silva", "Available"
             ));
 
-            System.out.println("✅ Sample properties inserted.");
+            System.out.println(" Sample properties inserted.");
         }
 
 
-        // -------------------------------------------------------
+
         // Insert sample companies (only if the table is empty)
-        // -------------------------------------------------------
+
         if (companyRepository.count() == 0) {
             companyRepository.save(new Company("Prime Lands Realty", "Colombo", "No. 12 Galle Road, Colombo", "info@primelands.lk", "+94 11 222 1000", "images/meeting.jpg", "Trusted Agency", "A trusted real estate company helping clients buy, sell, and invest with confidence across premium urban locations."));
             companyRepository.save(new Company("Lanka Property Hub", "Kandy", "Temple Road, Kandy", "hello@lankapropertyhub.lk", "+94 81 222 2000", "images/agentspeaking.jpg", "Verified Network", "A professional real estate company offering local market expertise, rental support, and residential property services."));
             companyRepository.save(new Company("South Coast Estates", "Galle", "Fort Road, Galle", "contact@southcoast.lk", "+94 91 222 3000", "images/seaview.jpg", "Top Rated", "Helping clients discover premium southern properties, investment opportunities, and trusted real estate services."));
             companyRepository.save(new Company("Urban Space Realty", "Negombo", "Beach Road, Negombo", "office@urbanspace.lk", "+94 31 222 4000", "images/house.jpg", "Professional Agency", "Supports clients with city apartments, business spaces, and commercial property decisions through one trusted network."));
-            System.out.println("✅ Sample companies inserted.");
+            System.out.println(" Sample companies inserted.");
         }
 
-        // -------------------------------------------------------
+
         // Insert sample users (only if the table is empty)
-        // -------------------------------------------------------
+
         if (userRepository.count() == 0) {
 
             // Admin user
@@ -152,9 +152,9 @@ public class DataInitializer implements CommandLineRunner {
             );
             userRepository.save(user);
 
-            System.out.println("✅ Sample users inserted.");
+            System.out.println(" Sample users inserted.");
         }
 
-        System.out.println("🚀 RealtorSL Backend is running at http://localhost:8080");
+        System.out.println(" RealtorSL Backend is running at http://localhost:8080");
     }
 }

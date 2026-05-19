@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-// REST Controller for Contact Message API
 // All endpoints start with /api/contact-messages
 @RestController
 @RequestMapping("/api/contact-messages")

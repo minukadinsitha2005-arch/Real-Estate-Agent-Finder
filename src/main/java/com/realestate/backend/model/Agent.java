@@ -2,11 +2,11 @@ package com.realestate.backend.model;
 
 import jakarta.persistence.*;
 
-// -------------------------------------------------------
+
 // OOP CONCEPT: INHERITANCE
 // Agent extends Person, so it inherits id, name, email,
 // and phone from the Person class automatically.
-// -------------------------------------------------------
+
 @Entity
 @Table(name = "agents")
 public class Agent extends Person {
@@ -33,9 +33,9 @@ public class Agent extends Person {
     @Column(columnDefinition = "TEXT")
     private String description;
 
-    // -------------------------------------------------------
+
     // Constructors
-    // -------------------------------------------------------
+
     public Agent() {}
 
     public Agent(String name, String email, String phone,
@@ -51,9 +51,9 @@ public class Agent extends Person {
         this.description = description;
     }
 
-    // -------------------------------------------------------
+
     // Getters and Setters (Encapsulation)
-    // -------------------------------------------------------
+
     public String getLocation() { return location; }
     public void setLocation(String location) { this.location = location; }
 
