@@ -576,11 +576,245 @@ function scrollToHashTarget() {
 
 function setupHomeSmoothLinks() { document.querySelectorAll('a[href^="#"]').forEach(link => link.addEventListener("click", e => { const target=document.querySelector(link.getAttribute("href")); if(target){e.preventDefault(); target.scrollIntoView({behavior:"smooth", block:"start"});}})); }
 
-document.addEventListener("DOMContentLoaded", function () {
-  updateAuthUI(); setupAuthForm(); setupModalCloseHelpers(); setupHomeSmoothLinks(); setupAppointmentPageHelpers(); ensurePropertyViewingForm(); setupPropertyFilters();
+
+
+// -------------------------------------------------------
+// Hero tabs and search actions for every main page
+// -------------------------------------------------------
+function smoothScrollTo(selector) {
+  const target = document.querySelector(selector);
+  if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function setHeroActiveTab(tab) {
+  const tabs = tab.closest(".tabs");
+  if (!tabs) return;
+  tabs.querySelectorAll("span").forEach(item => item.classList.remove("active"));
+  tab.classList.add("active");
+}
+
+function getActiveHeroTabText() {
+  return document.querySelector(".hero .tabs span.active")?.textContent.trim() || "";
+}
+
+function setSupportRequestType(type, subjectText = "") {
+  const form = document.querySelector(".support-form-grid:not(#propertyViewingForm)");
+  if (!form) return;
+  const select = form.querySelector("select");
+  const subjectInput = form.querySelector('input[placeholder="Enter subject"]');
+  const messageBox = form.querySelector("textarea");
+
+  const optionMap = {
+    "Appointments": "Book Appointment",
+    "Appointment": "Book Appointment",
+    "Complaints": "Complaint",
+    "Complaint": "Complaint",
+    "Support": "Support Request",
+    "Reschedule": "Reschedule Appointment",
+    "Help": "General Inquiry"
+  };
+
+  const value = optionMap[type] || type || "General Inquiry";
+  if (select) {
+    const match = Array.from(select.options).find(opt => opt.textContent.trim().toLowerCase() === value.toLowerCase());
+    if (match) select.value = match.value;
+  }
+  if (subjectInput && subjectText) subjectInput.value = subjectText;
+  if (messageBox && subjectText && !messageBox.value.trim()) messageBox.value = subjectText;
+  smoothScrollTo(".support-form-section");
+}
+
+function setContactInquiryType(type, subjectText = "") {
+  const form = document.querySelector(".contact-form-grid");
+  if (!form) return;
+  const select = form.querySelector("select");
+  const subjectInput = form.querySelector('input[placeholder="Enter the subject"]');
+  const messageBox = form.querySelector("textarea");
+
+  const optionMap = {
+    "Contact": "General Inquiry",
+    "Support": "Technical Support",
+    "FAQ": "General Inquiry",
+    "Office": "General Inquiry",
+    "Help": "Appointment Help"
+  };
+
+  const value = optionMap[type] || "General Inquiry";
+  if (select) {
+    const match = Array.from(select.options).find(opt => opt.textContent.trim().toLowerCase() === value.toLowerCase());
+    if (match) select.value = match.value;
+  }
+  if (subjectInput && subjectText) subjectInput.value = subjectText;
+  if (messageBox && subjectText && !messageBox.value.trim()) messageBox.value = subjectText;
+  smoothScrollTo(".contact-form-section");
+}
+
+function filterStaticCompanyCards(keyword = "") {
+  const cards = document.querySelectorAll(".companies-grid .company-card");
+  if (!cards.length) return;
+  const query = keyword.trim().toLowerCase();
+  cards.forEach(card => {
+    const text = card.textContent.toLowerCase();
+    card.style.display = !query || text.includes(query) ? "" : "none";
+  });
+  smoothScrollTo(".companies-section");
+}
+
+function runHeroSearch() {
   const page = window.location.pathname;
-  if (page.includes("agents.html")) { loadAgents(); loadCompanies(); document.querySelector(".hero .search-box button")?.addEventListener("click", searchAgents); }
-  if (page.includes("properties.html")) { const params=new URLSearchParams(window.location.search); loadProperties(params.get("keyword") ? { keyword: params.get("keyword") } : {}); document.querySelector(".hero .search-box button")?.addEventListener("click", searchProperties); }
+  const input = document.querySelector(".hero .search-box input");
+  const query = input?.value.trim() || "";
+  const activeTab = getActiveHeroTabText();
+
+  if (page.includes("index.html") || page === "/" || page.endsWith("/")) {
+    searchHome();
+    return;
+  }
+
+  if (page.includes("agents.html")) {
+    if (activeTab === "Companies") {
+      filterStaticCompanyCards(query);
+    } else if (activeTab === "Appointments") {
+      window.location.href = `appointments.html?type=${encodeURIComponent("Book Appointment")}${query ? `&agent=${encodeURIComponent(query)}` : ""}`;
+    } else if (activeTab === "Reviews") {
+      smoothScrollTo(".agents-trust-section");
+    } else if (activeTab === "Locations") {
+      query ? loadAgents({ location: query }) : smoothScrollTo(".agents-filters-section");
+    } else {
+      loadAgents(query ? { location: query } : {});
+      smoothScrollTo(".agents-list-section");
+    }
+    return;
+  }
+
+  if (page.includes("properties.html")) {
+    const tabTypeMap = {
+      "Buy": "House",
+      "Rent": "Rental",
+      "New Listings": "New Listing",
+      "Luxury": "Luxury",
+      "Commercial": "Commercial"
+    };
+    const params = query ? { keyword: query } : (tabTypeMap[activeTab] ? { category: tabTypeMap[activeTab] } : {});
+    loadProperties(params);
+    smoothScrollTo(".featured-properties");
+    return;
+  }
+
+  if (page.includes("appointments.html")) {
+    setSupportRequestType(activeTab || "General Inquiry", query);
+    return;
+  }
+
+  if (page.includes("about.html")) {
+    const aboutMap = {
+      "Our Story": ".about-story-section",
+      "Mission": ".mission-section",
+      "Vision": ".mission-section",
+      "Team": ".team-section",
+      "Support": ".about-cta"
+    };
+    smoothScrollTo(aboutMap[activeTab] || ".about-story-section");
+    return;
+  }
+
+  if (page.includes("contact.html")) {
+    setContactInquiryType(activeTab || "Contact", query);
+  }
+}
+
+function handleHeroTabClick(tabText) {
+  const page = window.location.pathname;
+
+  if (page.includes("agents.html")) {
+    const map = {
+      "Agents": ".agents-list-section",
+      "Companies": ".companies-section",
+      "Appointments": ".agents-cta-section",
+      "Reviews": ".agents-trust-section",
+      "Locations": ".agents-filters-section"
+    };
+    if (tabText === "Agents") loadAgents();
+    if (tabText === "Companies") filterStaticCompanyCards("");
+    smoothScrollTo(map[tabText] || ".agents-list-section");
+    return;
+  }
+
+  if (page.includes("properties.html")) {
+    const map = {
+      "Buy": "House",
+      "Rent": "Rental",
+      "New Listings": "New Listing",
+      "Luxury": "Luxury",
+      "Commercial": "Commercial"
+    };
+    if (map[tabText]) loadProperties({ category: map[tabText] });
+    smoothScrollTo(".featured-properties");
+    return;
+  }
+
+  if (page.includes("appointments.html")) {
+    setSupportRequestType(tabText);
+    return;
+  }
+
+  if (page.includes("about.html")) {
+    const map = {
+      "Our Story": ".about-story-section",
+      "Mission": ".mission-section",
+      "Vision": ".mission-section",
+      "Team": ".team-section",
+      "Support": ".about-cta"
+    };
+    smoothScrollTo(map[tabText] || ".about-story-section");
+    return;
+  }
+
+  if (page.includes("contact.html")) {
+    if (tabText === "FAQ") smoothScrollTo(".contact-faq-section");
+    else if (tabText === "Office") smoothScrollTo(".contact-details-section");
+    else if (tabText === "Support" || tabText === "Help") smoothScrollTo(".contact-support-section");
+    else smoothScrollTo(".contact-form-section");
+  }
+}
+
+function setupHeroActions() {
+  const hero = document.querySelector(".hero");
+  if (!hero || hero.dataset.heroActionsReady) return;
+  hero.dataset.heroActionsReady = "true";
+
+  hero.querySelectorAll(".tabs span").forEach(tab => {
+    tab.style.cursor = "pointer";
+    tab.addEventListener("click", () => {
+      setHeroActiveTab(tab);
+      handleHeroTabClick(tab.textContent.trim());
+    });
+  });
+
+  const searchButton = hero.querySelector(".search-box button");
+  const searchInput = hero.querySelector(".search-box input");
+  if (searchButton) {
+    searchButton.removeAttribute("onclick");
+    searchButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      runHeroSearch();
+    });
+  }
+  if (searchInput) {
+    searchInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        runHeroSearch();
+      }
+    });
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  updateAuthUI(); setupAuthForm(); setupModalCloseHelpers(); setupHomeSmoothLinks(); setupAppointmentPageHelpers(); ensurePropertyViewingForm(); setupPropertyFilters(); setupHeroActions();
+  const page = window.location.pathname;
+  if (page.includes("agents.html")) { loadAgents(); loadCompanies(); }
+  if (page.includes("properties.html")) { const params=new URLSearchParams(window.location.search); loadProperties(params.get("keyword") ? { keyword: params.get("keyword") } : {}); }
   const appointmentForm = document.querySelector(".support-form-grid:not(#propertyViewingForm)"); if (appointmentForm) appointmentForm.addEventListener("submit", submitAppointmentForm);
   const contactForm = document.querySelector(".contact-form-grid"); if (contactForm) contactForm.addEventListener("submit", submitContactForm);
   setupAdminPage(); revealOnScroll(); scrollToHashTarget();

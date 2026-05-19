@@ -10,386 +10,248 @@
 
 <header class="navbar">
 
-<div class="logo">
-  <img src="images/logo.png" alt="Real Estate Agent Finder Logo">
-  <span>RealtorSL</span>
-</div>
+  <div class="logo">
+    <img src="images/logo.png" alt="Real Estate Agent Finder Logo">
+    <span>RealtorSL</span>
+  </div>
 
-    <nav class="nav-menu">
-      <a href="index.html">Home</a>
-      <a href="agents.html">Find Agents</a>
-      <a href="properties.html" class="active">Properties</a>
-      <a href="appointments.html">Appointments</a>
-      <a href="about.html">About Us</a>
-      <a href="contact.html">Contact Us</a>
-    </nav>
+  <nav class="nav-menu">
+    <a href="index.html">Home</a>
+    <a href="agents.html">Find Agents</a>
+    <a href="properties.html" class="active">Properties</a>
+    <a href="appointments.html">Appointments</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
 
-    <div class="auth">
-      <div class="auth-buttons" id="authButtons">
-        <button class="login-btn" onclick="openModal('login')">Log in</button>
-        <button class="signup-btn" onclick="openModal('signup')">Sign up</button>
-      </div>
+  <div class="auth">
+    <div class="auth-buttons" id="authButtons">
+      <button class="login-btn" onclick="openModal('login')">Log in</button>
+      <button class="signup-btn" onclick="openModal('signup')">Sign up</button>
     </div>
-  </header>
+  </div>
+</header>
 
-  <section class="hero hero-properties">
-    <div class="overlay">
-      <h1>Discover Properties That Match Your Lifestyle</h1>
+<section class="hero hero-properties">
+  <div class="overlay">
+    <h1>Discover Properties That Match Your Lifestyle</h1>
 
-      <div class="tabs">
-        <span class="active">Buy</span>
-        <span>Rent</span>
-        <span>New Listings</span>
-        <span>Luxury</span>
-        <span>Commercial</span>
-      </div>
-
-      <div class="search-box">
-        <input type="text" placeholder="Search by location, property type, or keyword" />
-        <button>Search</button>
-      </div>
+    <div class="tabs">
+      <span class="active">Buy</span>
+      <span>Rent</span>
+      <span>New Listings</span>
+      <span>Luxury</span>
+      <span>Commercial</span>
     </div>
 
-    <div class="hero-fade"></div>
-  </section>
-
-  <section class="property-search-section">
-    <div class="property-search-header">
-      <span class="property-search-tag">Quick Filters</span>
-      <h2>Find the right property faster</h2>
-      <p>
-        Narrow your search with smart filters and discover listings that match
-        your budget, location, and lifestyle needs.
-      </p>
+    <div class="search-box">
+      <input type="text" placeholder="Search by location, property type, or keyword" />
+      <button>Search</button>
     </div>
+  </div>
 
-    <div class="property-search-grid">
-      <div class="property-filter-box reveal">
-        <h3>Location</h3>
-        <p>Colombo, Kandy, Galle, Negombo, Jaffna</p>
-      </div>
+  <div class="hero-fade"></div>
+</section>
 
-      <div class="property-filter-box reveal">
-        <h3>Property Type</h3>
-        <p>Apartment, House, Villa, Land, Commercial</p>
-      </div>
-
-      <div class="property-filter-box reveal">
-        <h3>Price Range</h3>
-        <p>$50,000 – $500,000 and above</p>
-      </div>
-
-      <div class="property-filter-box reveal">
-        <h3>Rooms & Size</h3>
-        <p>Bedrooms, bathrooms, and area size</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="featured-properties" id="featuredProperties">
-    <div class="featured-properties-header">
-      <span class="featured-properties-tag">Featured Properties</span>
-      <h2>Handpicked listings for you</h2>
-      <p>
-        Explore premium listings including family homes, apartments, villas,
-        and investment properties in top locations.
-      </p>
-    </div>
-
-    <div class="featured-properties-grid">
-      <div class="featured-property-card reveal">
-        <img src="images/luxuryaprtment.jpg" alt="Luxury Apartment" />
-        <div class="featured-property-content">
-          <h3>Luxury Apartment</h3>
-          <div class="featured-price">$250,000</div>
-          <p>3 Beds | 2 Baths</p>
-          <p>Colombo</p>
-          <a href="#" class="featured-property-btn">View Details</a>
-        </div>
-      </div>
-
-      <div class="featured-property-card reveal">
-        <img src="images/modernhouse.jpg" alt="Modern Family House" />
-        <div class="featured-property-content">
-          <h3>Modern Family House</h3>
-          <div class="featured-price">$320,000</div>
-          <p>4 Beds | 3 Baths</p>
-          <p>Kandy</p>
-          <a href="#" class="featured-property-btn">View Details</a>
-        </div>
-      </div>
-
-      <div class="featured-property-card reveal">
-        <img src="images/seaview.jpg" alt="Sea View Villa" />
-        <div class="featured-property-content">
-          <h3>Sea View Villa</h3>
-          <div class="featured-price">$540,000</div>
-          <p>5 Beds | 4 Baths</p>
-          <p>Galle</p>
-          <a href="#" class="featured-property-btn">View Details</a>
-        </div>
-      </div>
-
-      <div class="featured-property-card reveal">
-        <img src="images/apartments.jpg" alt="City Apartment" />
-        <div class="featured-property-content">
-          <h3>City Apartment</h3>
-          <div class="featured-price">$180,000</div>
-          <p>2 Beds | 1 Bath</p>
-          <p>Negombo</p>
-          <a href="#" class="featured-property-btn">View Details</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="property-categories" id="propertyCategories">
-    <div class="property-categories-header">
-      <span class="property-categories-tag">Browse Properties</span>
-      <h2>Explore property categories for every need</h2>
-      <p>
-        Discover listings by category to quickly find houses, apartments,
-        lands, commercial spaces, villas, and rentals.
-      </p>
-    </div>
-
-    <div class="property-categories-grid">
-      <div class="property-card reveal">
-        <img src="images/modernhouse.jpg" alt="Houses">
-        <div class="property-card-content">
-          <h3>Houses</h3>
-          <p>Browse family houses and comfortable homes in popular cities.</p>
-        </div>
-      </div>
-
-      <div class="property-card reveal">
-        <img src="images/apartments.jpg" alt="Apartments">
-        <div class="property-card-content">
-          <h3>Apartments</h3>
-          <p>Explore apartment options for individuals and families.</p>
-        </div>
-      </div>
-
-      <div class="property-card reveal">
-        <img src="images/lands.jpg" alt="Lands">
-        <div class="property-card-content">
-          <h3>Lands</h3>
-          <p>Search land listings for investment or future construction.</p>
-        </div>
-      </div>
-
-      <div class="property-card reveal">
-        <img src="images/meeting.jpg" alt="Commercial">
-        <div class="property-card-content">
-          <h3>Commercial</h3>
-          <p>Find office spaces and commercial properties for business needs.</p>
-        </div>
-      </div>
-
-      <div class="property-card reveal">
-        <img src="images/seaview.jpg" alt="Villas">
-        <div class="property-card-content">
-          <h3>Villas</h3>
-          <p>Discover premium villas with modern features and beautiful views.</p>
-        </div>
-      </div>
-
-      <div class="property-card reveal">
-        <img src="images/newlistings.jpg" alt="Rentals">
-        <div class="property-card-content">
-          <h3>Rentals</h3>
-          <p>Browse rental properties and short-term viewing opportunities.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<section class="locations-section">
-  <div class="locations-header">
-    <span class="locations-tag">POPULAR LOCATIONS</span>
-    <h2>Explore properties by city</h2>
+<section class="property-search-section">
+  <div class="property-search-header">
+    <span class="property-search-tag">Quick Filters</span>
+    <h2>Find the right property faster</h2>
     <p>
-      Discover active listings in some of the most popular real estate markets across Sri Lanka.
+      Narrow your search with smart filters and discover listings that match
+      your budget, location, and lifestyle needs.
     </p>
   </div>
 
-  <div class="locations-slider-wrapper">
-    <button class="locations-arrow left" onclick="scrollLocations(-1)">&#10094;</button>
-
-    <div class="locations-scroll" id="locationsScroll">
-      <div class="location-card reveal">
-        <img src="images/luxuryaprtment.jpg" alt="Colombo">
-        <div class="location-card-content">
-          <h3>Colombo</h3>
-          <p>120+ Listings</p>
-        </div>
-      </div>
-
-      <div class="location-card reveal">
-        <img src="images/modernhouse.jpg" alt="Kandy">
-        <div class="location-card-content">
-          <h3>Kandy</h3>
-          <p>85+ Listings</p>
-        </div>
-      </div>
-
-      <div class="location-card reveal">
-        <img src="images/seaview.jpg" alt="Galle">
-        <div class="location-card-content">
-          <h3>Galle</h3>
-          <p>60+ Listings</p>
-        </div>
-      </div>
-
-      <div class="location-card reveal">
-        <img src="images/apartments.jpg" alt="Negombo">
-        <div class="location-card-content">
-          <h3>Negombo</h3>
-          <p>45+ Listings</p>
-        </div>
-      </div>
-
-      <div class="location-card reveal">
-        <img src="images/house.jpg" alt="Jaffna">
-        <div class="location-card-content">
-          <h3>Jaffna</h3>
-          <p>40+ Listings</p>
-        </div>
-      </div>
-
-      <div class="location-card reveal">
-        <img src="images/house1.jpg" alt="Matara">
-        <div class="location-card-content">
-          <h3>Matara</h3>
-          <p>38+ Listings</p>
-        </div>
-      </div>
-
-      <div class="location-card reveal">
-        <img src="images/newlistings.jpg" alt="Anuradhapura">
-        <div class="location-card-content">
-          <h3>Anuradhapura</h3>
-          <p>30+ Listings</p>
-        </div>
-      </div>
-
-      <div class="location-card reveal">
-        <img src="images/openhouses.jpg" alt="Batticaloa">
-        <div class="location-card-content">
-          <h3>Batticaloa</h3>
-          <p>28+ Listings</p>
-        </div>
-      </div>
-
-      <div class="location-card reveal">
-        <img src="images/lands.jpg" alt="Trincomalee">
-        <div class="location-card-content">
-          <h3>Trincomalee</h3>
-          <p>25+ Listings</p>
-        </div>
-      </div>
-
-      <div class="location-card reveal">
-        <img src="images/underconstruction.jpg" alt="Nuwara Eliya">
-        <div class="location-card-content">
-          <h3>Nuwara Eliya</h3>
-          <p>20+ Listings</p>
-        </div>
-      </div>
-
-      <div class="location-card reveal">
-        <img src="images/pricereduced.jpg" alt="Kurunegala">
-        <div class="location-card-content">
-          <h3>Kurunegala</h3>
-          <p>32+ Listings</p>
-        </div>
-      </div>
-
-      <div class="location-card reveal">
-        <img src="images/house2.png" alt="Kalutara">
-        <div class="location-card-content">
-          <h3>Kalutara</h3>
-          <p>29+ Listings</p>
-        </div>
-      </div>
-
-      <div class="location-card reveal">
-        <img src="images/Findagents.jpg" alt="Badulla">
-        <div class="location-card-content">
-          <h3>Badulla</h3>
-          <p>22+ Listings</p>
-        </div>
-      </div>
-
-      <div class="location-card reveal">
-        <img src="images/meeting.jpg" alt="Ratnapura">
-        <div class="location-card-content">
-          <h3>Ratnapura</h3>
-          <p>19+ Listings</p>
-        </div>
-      </div>
-
-      <div class="location-card reveal">
-        <img src="images/agentspeaking.jpg" alt="Hambantota">
-        <div class="location-card-content">
-          <h3>Hambantota</h3>
-          <p>18+ Listings</p>
-        </div>
-      </div>
+  <div class="property-search-grid">
+    <div class="property-filter-box reveal">
+      <h3>Location</h3>
+      <p>Colombo, Kandy, Galle, Negombo, Jaffna</p>
     </div>
 
-    <button class="locations-arrow right" onclick="scrollLocations(1)">&#10095;</button>
+    <div class="property-filter-box reveal">
+      <h3>Property Type</h3>
+      <p>Apartment, House, Villa, Land, Commercial</p>
+    </div>
+
+    <div class="property-filter-box reveal">
+      <h3>Price Range</h3>
+      <p>$50,000 – $500,000 and above</p>
+    </div>
+
+    <div class="property-filter-box reveal">
+      <h3>Rooms & Size</h3>
+      <p>Bedrooms, bathrooms, and area size</p>
+    </div>
   </div>
 </section>
 
-  <section class="property-promo-section">
-    <div class="property-promo-box reveal">
-      <span class="property-promo-tag">Property Search</span>
-      <h2>Looking for your perfect home?</h2>
+<section class="featured-properties" id="featuredProperties">
+  <div class="featured-properties-header">
+    <span class="featured-properties-tag">Featured Properties</span>
+    <h2>Handpicked listings for you</h2>
+    <p>
+      Explore premium listings including family homes, apartments, villas,
+      and investment properties in top locations.
+    </p>
+  </div>
+
+  <div class="featured-properties-grid">
+    <div class="featured-property-card reveal">
+      <img src="images/luxuryaprtment.jpg" alt="Luxury Apartment" />
+      <div class="featured-property-content">
+        <h3>Luxury Apartment</h3>
+        <div class="featured-price">$250,000</div>
+        <p>3 Beds | 2 Baths</p>
+        <p>Colombo</p>
+        <a href="#" class="featured-property-btn">View Details</a>
+      </div>
+    </div>
+
+    <div class="featured-property-card reveal">
+      <img src="images/modernhouse.jpg" alt="Modern Family House" />
+      <div class="featured-property-content">
+        <h3>Modern Family House</h3>
+        <div class="featured-price">$320,000</div>
+        <p>4 Beds | 3 Baths</p>
+        <p>Kandy</p>
+        <a href="#" class="featured-property-btn">View Details</a>
+      </div>
+    </div>
+
+    <div class="featured-property-card reveal">
+      <img src="images/seaview.jpg" alt="Sea View Villa" />
+      <div class="featured-property-content">
+        <h3>Sea View Villa</h3>
+        <div class="featured-price">$540,000</div>
+        <p>5 Beds | 4 Baths</p>
+        <p>Galle</p>
+        <a href="#" class="featured-property-btn">View Details</a>
+      </div>
+    </div>
+
+    <div class="featured-property-card reveal">
+      <img src="images/apartments.jpg" alt="City Apartment" />
+      <div class="featured-property-content">
+        <h3>City Apartment</h3>
+        <div class="featured-price">$180,000</div>
+        <p>2 Beds | 1 Bath</p>
+        <p>Negombo</p>
+        <a href="#" class="featured-property-btn">View Details</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="property-categories" id="propertyCategories">
+  <div class="property-categories-header">
+    <span class="property-categories-tag">Browse Properties</span>
+    <h2>Explore property categories for every need</h2>
+    <p>
+      Discover listings by category to quickly find houses, apartments,
+      lands, commercial spaces, villas, and rentals.
+    </p>
+  </div>
+
+  <div class="property-categories-grid">
+    <div class="property-card reveal">
+      <img src="images/modernhouse.jpg" alt="Houses">
+      <div class="property-card-content">
+        <h3>Houses</h3>
+        <p>Browse family houses and comfortable homes in popular cities.</p>
+      </div>
+    </div>
+
+    <div class="property-card reveal">
+      <img src="images/apartments.jpg" alt="Apartments">
+      <div class="property-card-content">
+        <h3>Apartments</h3>
+        <p>Explore apartment options for individuals and families.</p>
+      </div>
+    </div>
+
+    <div class="property-card reveal">
+      <img src="images/lands.jpg" alt="Lands">
+      <div class="property-card-content">
+        <h3>Lands</h3>
+        <p>Search land listings for investment or future construction.</p>
+      </div>
+    </div>
+
+    <div class="property-card reveal">
+      <img src="images/meeting.jpg" alt="Commercial">
+      <div class="property-card-content">
+        <h3>Commercial</h3>
+        <p>Find office spaces and commercial properties for business needs.</p>
+      </div>
+    </div>
+
+    <div class="property-card reveal">
+      <img src="images/seaview.jpg" alt="Villas">
+      <div class="property-card-content">
+        <h3>Villas</h3>
+        <p>Discover premium villas with modern features and beautiful views.</p>
+      </div>
+    </div>
+
+    <div class="property-card reveal">
+      <img src="images/newlistings.jpg" alt="Rentals">
+      <div class="property-card-content">
+        <h3>Rentals</h3>
+        <p>Browse rental properties and short-term viewing opportunities.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="property-promo-section">
+  <div class="property-promo-box reveal">
+    <span class="property-promo-tag">Property Search</span>
+    <h2>Looking for your perfect home?</h2>
+    <p>
+      Browse verified listings, compare property details, and find the
+      ideal place for your next move.
+    </p>
+    <a href="properties.html" class="property-promo-btn">Explore Properties</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h3>Real Estate Agent Finder</h3>
       <p>
-        Browse verified listings, compare property details, and find the
-        ideal place for your next move.
+        Helping buyers, sellers, and renters discover trusted properties
+        and real estate services across Sri Lanka.
       </p>
-      <a href="properties.html" class="property-promo-btn">Explore Properties</a>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-brand">
-        <h3>Real Estate Agent Finder</h3>
-        <p>
-          Helping buyers, sellers, and renters discover trusted properties
-          and real estate services across Sri Lanka.
-        </p>
-      </div>
-
-      <div class="footer-links">
-        <h4>Company</h4>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Support</a>
-      </div>
-
-      <div class="footer-contact">
-        <h4>Contact</h4>
-        <p>Email: support@realestate.com</p>
-        <p>Phone: +94 77 123 4567</p>
-      </div>
-
-      <div class="footer-social">
-        <h4>Follow Us</h4>
-        <a href="#">Facebook</a>
-        <a href="#">Instagram</a>
-        <a href="#">LinkedIn</a>
-      </div>
     </div>
 
-    <div class="footer-bottom">
-      © 2026 Real Estate Agent Finder. All rights reserved.
+    <div class="footer-links">
+      <h4>Company</h4>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Support</a>
     </div>
-  </footer>
+
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>Email: support@realestate.com</p>
+      <p>Phone: +94 77 123 4567</p>
+    </div>
+
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Real Estate Agent Finder. All rights reserved.
+  </div>
+</footer>
 
 
 
@@ -449,6 +311,6 @@
   </div>
 </div>
 
-  <script src="js/script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
